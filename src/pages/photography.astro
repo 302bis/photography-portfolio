@@ -1,0 +1,70 @@
+---
+const photographs = [
+  {
+    image: "/images/uno.JPG",
+    title: "Tokyo",
+    year: "2024"
+  },
+  {
+    image: "/images/dos.JPG",
+    title: "Shibuya",
+    year: "2024"
+  },
+  {
+    image: "/images/tres.JPG",
+    title: "Mexico City",
+    year: "2025"
+  },
+  {
+    image: "/images/cuatro.JPG",
+    title: "Roma",
+    year: "2025"
+  }
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Photography — Patricio Bustos</title>
+  </head>
+
+  <body class="bg-white text-black">
+
+    <header class="flex items-center justify-between px-8 py-6">
+      <a href="/" class="text-lg font-medium">
+        Patricio Bustos
+      </a>
+
+      <nav class="flex gap-6 text-sm">
+        <a href="/photography">Photography</a>
+        <a href="/about">About</a>
+      </nav>
+    </header>
+
+    <main class="px-8 py-16">
+
+      <div class="grid gap-12 md:grid-cols-2">
+
+        {photographs.map((photo) => (
+          <figure>
+            <img
+              src={photo.image}
+              alt={photo.title}
+              class="w-full"
+            />
+
+            <figcaption class="mt-3 flex justify-between text-sm">
+              <span>{photo.title}</span>
+              <span class="text-gray-500">{photo.year}</span>
+            </figcaption>
+          </figure>
+        ))}
+
+      </div>
+
+    </main>
+
+  </body>
+</html>
